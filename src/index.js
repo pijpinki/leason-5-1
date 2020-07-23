@@ -12,9 +12,7 @@ async function main() {
 
   app.use(express.json());
 
-  app.use("/app", (req, res) => {
-    res.sendFile("./index.html");
-  });
+  app.use("/app", express.static(__dirname + "/public/index.html"));
 
   app.use("/users", usersRouter);
   app.use("/cities", citiesRotuer);

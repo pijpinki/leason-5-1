@@ -13,9 +13,16 @@
             const params = new URLSearchParams({
               client_id:
                 "494489327191-u5ei58jvqaolcigonbumra231fgujbrk.apps.googleusercontent.com",
-              redirect_uri: "https://w4d7s.sse.codesandbox.io/users/google"
+              redirect_uri: "https://w4d7s.sse.codesandbox.io/users/google",
+              response_type: "code",
+              scope: "openid email profile"
             });
-            const url = "https://accounts.google.com/o/oauth2/v2/auth";
+
+            const url =
+              "https://accounts.google.com/o/oauth2/v2/auth?" +
+              params.toString();
+
+            window.open(url);
           }
         }
       });
